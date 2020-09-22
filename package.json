@@ -1,0 +1,22 @@
+{
+  "name": "mern-fb-like-app",
+  "version": "1.0.0",
+  "description": "Social Network and Dating Site",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carpejemm/MERN-FB-like-app.git"
+  },
+  "author": "Jem Laguda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carpejemm/MERN-FB-like-app/issues"
+  },
+  "homepage": "https://github.com/carpejemm/MERN-FB-like-app#readme"
+}
