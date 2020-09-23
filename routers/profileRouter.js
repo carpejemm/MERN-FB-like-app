@@ -10,8 +10,6 @@ const Profile = require('../models/Profile');
 const User = require('../models/User');
 const Post = require('../models/Post');
 
-// router.get('/', (req, res) => res.send('Profile route'));
-
 router.get('/myprofile', auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({

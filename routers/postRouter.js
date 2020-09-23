@@ -7,8 +7,6 @@ const checkObjectId = require('../middleware/checkObjectId');
 const Post = require('../models/Post');
 const User = require('../models/User');
 
-// router.get('/', (req, res) => res.send('Posts route'));
-
 router.get('/', auth, async (req, res) => {
   try {
     const posts = await Post.find().sort({ date: -1 });

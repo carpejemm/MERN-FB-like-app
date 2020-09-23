@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.landing {
+  position: relative;
+  background: url('./img/network.gif') no-repeat center center/cover;
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.landing-inner {
+  color: #fff;
+  height: 100%;
+  width: 80%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.x-large {
+  font-size: 100px;
+  line-height: 1.2;
+  margin-bottom: -10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.landing-desc {
+  margin-bottom: 20px;
+}
+
+.landing-height {
+  height: 100%;
+}
+
+.navbar {
+  background-color: rgba(46, 49, 49, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar li {
+  padding: 10px;
+}
+
+.buttons {
+  border-radius: 5px;
+  border: #ccc solid 1px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.bgdark {
+  background-color: #0b0c0e;
+  border-color: #0b0c0e;
+}
+
+.bgdark:hover {
+  font-size: 18px;
+  background-color: #fff;
+  color: #333;
+}
+
+.bgnone:hover {
+  font-size: 20px;
+}
+
+.signup-box,
+.login-box,
+.dashboard-box,
+.profiles-box,
+.posts-box {
+  background-color: #00bcd4;
+  border: solid 1px black;
+  height: 100vh;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+tr,
+td,
+th {
+  border: 1px solid black;
 }

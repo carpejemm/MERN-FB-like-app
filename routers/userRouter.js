@@ -7,8 +7,6 @@ const { body, validationResult } = require('express-validator');
 
 const User = require('../models/User');
 
-router.get('/', (req, res) => res.send('User route'));
-
 router.post(
   '/register',
   [

@@ -1,7 +1,7 @@
 {
   "name": "mern-fb-like-app",
   "version": "1.0.0",
-  "description": "Social Network and Dating Site",
+  "description": "Social Network",
   "main": "server.js",
   "scripts": {
     "start": "node server",
