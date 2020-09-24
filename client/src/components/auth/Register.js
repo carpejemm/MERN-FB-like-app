@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { setAlert } from '../../actions/alert';
@@ -33,60 +33,64 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   }
 
   return (
-    <Fragment>
-      <div className='signup-box'>
-        <h1>Sign Up</h1>
-        <p>
-          <i className='fas fa-user'></i> Create Your Account. It’s quick and
-          easy.
-        </p>
-        <form onSubmit={onSubmit}>
-          <div>
-            <input
-              type='text'
-              placeholder='Name'
-              name='name'
-              value={name}
-              onChange={onChange}
-            />
-          </div>
-          <div>
-            <input
-              type='email'
-              placeholder='Email Address'
-              name='email'
-              value={email}
-              onChange={onChange}
-              // required
-            />
-          </div>
-          <div>
-            <input
-              type='password'
-              placeholder='Password'
-              name='password'
-              minLength='8'
-              value={password}
-              onChange={onChange}
-            />
-          </div>
-          <div>
-            <input
-              type='password'
-              placeholder='Confirm Password'
-              name='password2'
-              minLength='6'
-              value={password2}
-              onChange={onChange}
-            />
-          </div>
-          <input type='submit' value='Register' />
-        </form>
-        <p>
-          Already have an account? <Link to='/login'>Sign In</Link>
-        </p>
-      </div>
-    </Fragment>
+    <div className='signup-box'>
+      <h2 className='title'>SIGN UP</h2>
+      <p>Create your account today.</p>
+      <p>It’s quick and easy!</p>
+
+      <form onSubmit={onSubmit}>
+        <div className='input-field'>
+          <i className='fas fa-user'></i>
+          <input
+            type='text'
+            placeholder='Name'
+            name='name'
+            value={name}
+            onChange={onChange}
+          />
+        </div>
+        <div className='input-field'>
+          <i className='fas fa-envelope'></i>
+          <input
+            type='email'
+            placeholder='Email Address'
+            name='email'
+            value={email}
+            onChange={onChange}
+            // required
+          />
+        </div>
+        <div className='input-field'>
+          <i className='fas fa-lock'></i>
+          <input
+            type='password'
+            placeholder='Password'
+            name='password'
+            minLength='6'
+            value={password}
+            onChange={onChange}
+          />
+        </div>
+        <div className='input-field'>
+          <i className='fas fa-lock'></i>
+          <input
+            type='password'
+            placeholder='Confirm Password'
+            name='password2'
+            minLength='6'
+            value={password2}
+            onChange={onChange}
+          />
+        </div>
+        <input type='submit' className='btn btn-primary' value='Register' />
+      </form>
+      <p className='my-1'>
+        Already have an account?{' '}
+        <Link to='/login' className='link'>
+          Sign In
+        </Link>
+      </p>
+    </div>
   );
 };
 

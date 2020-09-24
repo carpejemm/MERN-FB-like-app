@@ -7,28 +7,37 @@ const CommentForm = ({ postId, addComment }) => {
   const [text, setText] = useState('');
 
   return (
-    <div className='post-form'>
-      <div className='bg-primary p'>
-        <h3>Leave a Comment</h3>
-      </div>
+    <div>
       <form
-        className='form my-1'
         onSubmit={e => {
           e.preventDefault();
           addComment(postId, { text });
           setText('');
         }}
       >
-        <textarea
-          name='text'
-          cols='30'
-          rows='5'
-          placeholder='Comment the post'
-          value={text}
-          onChange={e => setText(e.target.value)}
-          required
-        />
-        <input type='submit' className='btn btn-dark my-1' value='Submit' />
+        <div className='comment-input'>
+          <div className='comment-avatar'>
+            <img
+              height='32'
+              src='https://cdn.onlinewebfonts.com/svg/img_568656.png'
+              width='32'
+              alt='avatar'
+            />
+          </div>
+          <div className='comment-input-area'>
+            <textarea
+              className='textarea'
+              name='text'
+              placeholder='Write your comment'
+              value={text}
+              onChange={e => setText(e.target.value)}
+              required
+            ></textarea>
+            <div className='input-action clearfix'>
+              <input type='submit' value='POST COMMENT' className='send-btn' />
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   );

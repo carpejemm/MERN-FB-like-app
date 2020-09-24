@@ -22,7 +22,7 @@ const Dashboard = ({
     <Spinner />
   ) : (
     <div className='dashboard-box'>
-      <h1>Dashboard</h1>
+      <h2 className='title'>Dashboard</h2>
       <p>
         <i className='fas fa-user' /> Welcome {user && user.name}
       </p>

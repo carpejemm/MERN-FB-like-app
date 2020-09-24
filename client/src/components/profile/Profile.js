@@ -19,16 +19,12 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
       {profile === null ? (
         <Spinner />
       ) : (
-        <Fragment>
-          <Link to='/profiles' className='btn btn-light'>
-            Back To Profiles
-          </Link>
+        <div className='myprofile-box'>
+          <Link to='/profiles'>Back To Profiles</Link>
           {auth.isAuthenticated &&
             auth.loading === false &&
             auth.user._id === profile.user._id && (
-              <Link to='/edit-profile' className='btn btn-dark'>
-                Edit Profile
-              </Link>
+              <Link to='/edit-profile'>Edit Profile</Link>
             )}
           <div className='profile-grid my-1'>
             <ProfileTop profile={profile} />
@@ -65,7 +61,7 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
               )}
             </div>
           </div>
-        </Fragment>
+        </div>
       )}
     </Fragment>
   );

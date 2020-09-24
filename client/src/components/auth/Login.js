@@ -20,19 +20,17 @@ const Login = ({ login, isAuthenticated }) => {
     login(email, password);
   };
 
-  // Redirect if logged in
   if (isAuthenticated) {
     return <Redirect to='/dashboard' />;
   }
 
   return (
     <div className='login-box'>
-      <h1 className='large text-primary'>Sign In</h1>
-      <p className='lead'>
-        <i className='fas fa-user' /> Sign Into Your Account
-      </p>
+      <h2 className='title'>LOG IN</h2>
+      <p> Sign Into Your Account</p>
       <form className='form' onSubmit={onSubmit}>
-        <div className='form-group'>
+        <div className='input-field'>
+          <i className='fas fa-user'></i>
           <input
             type='email'
             placeholder='Email Address'
@@ -42,7 +40,8 @@ const Login = ({ login, isAuthenticated }) => {
             required
           />
         </div>
-        <div className='form-group'>
+        <div className='input-field'>
+          <i className='fas fa-lock'></i>
           <input
             type='password'
             placeholder='Password'
@@ -52,10 +51,13 @@ const Login = ({ login, isAuthenticated }) => {
             minLength='8'
           />
         </div>
-        <input type='submit' className='btn btn-primary' value='Login' />
+        <input type='submit' className='btn solid' value='Login' />
       </form>
-      <p className='my-1'>
-        Don't have an account? <Link to='/register'>Sign Up</Link>
+      <p>
+        Don't have an account?{' '}
+        <Link to='/register' className='link'>
+          Sign Up
+        </Link>
       </p>
     </div>
   );

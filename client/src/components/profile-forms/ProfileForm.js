@@ -67,9 +67,9 @@ const ProfileForm = ({
   };
 
   return (
-    <Fragment>
-      <h1 className='large text-primary'>Edit Your Profile</h1>
-      <p className='lead'>
+    <div className='profileform-box'>
+      <h2>Edit Your Profile</h2>
+      <p>
         <i className='fas fa-user' /> Add some changes to your profile
       </p>
       <small>* = required field</small>
@@ -152,7 +152,6 @@ const ProfileForm = ({
           <button
             onClick={() => toggleSocialInputs(!displaySocialInputs)}
             type='button'
-            className='btn btn-light'
           >
             Add Social Network Links
           </button>
@@ -218,12 +217,10 @@ const ProfileForm = ({
           </Fragment>
         )}
 
-        <input type='submit' className='btn btn-primary my-1' />
-        <Link className='btn btn-light my-1' to='/dashboard'>
-          Go Back
-        </Link>
+        <input type='submit' />
+        <Link to='/dashboard'>Go Back</Link>
       </form>
-    </Fragment>
+    </div>
   );
 };
 

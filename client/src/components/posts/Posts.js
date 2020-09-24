@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
@@ -15,12 +15,10 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
     <Spinner />
   ) : (
     <div className='posts-box'>
-      <h1 className='large text-primary'>Posts</h1>
-      <p className='lead'>
-        <i className='fas fa-user' /> Welcome to the community
-      </p>
+      <h1>Posts</h1>
+      <p>Hi there! Welcome to our the community.</p>
       <PostForm />
-      <div className='posts'>
+      <div>
         {posts.map(post => (
           <PostItem key={post._id} post={post} />
         ))}

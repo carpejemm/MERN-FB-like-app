@@ -13,51 +13,59 @@ const PostItem = ({
   post: { _id, text, name, avatar, user, likes, comments, date },
   showActions
 }) => (
-  <div className='post bg-white p-1 my-1'>
-    <div>
-      <Link to={`/profile/${user}`}>
-        <img className='round-img' src={avatar} alt='' width='50px' />
-        <h4>{name}</h4>
-      </Link>
-    </div>
-    <div>
-      <p className='my-1'>{text}</p>
-      <p className='post-date'>
-        Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
-      </p>
+  <div className='post-item'>
+    <div className='post'>
+      <div className='main'>
+        <div className='pic'>
+          <img src={avatar} alt='' width='50' />
+        </div>
+        <div className='details'>
+          <Link to={`/profile/${user}`}>
+            <div className='name post-username'>{name}</div>
+          </Link>
+          <div className='time'>
+            Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
+          </div>
+        </div>
+        <div className='clear'></div>
 
+        <div className='content'>{text}</div>
+        <div className='likes'>
+          {likes.length > 0 && <div>{likes.length} likes</div>}
+        </div>
+        <span className='likes'>
+          {comments.length > 0 && <span>{comments.length} comments</span>}
+        </span>
+      </div>
       {showActions && (
         <Fragment>
-          <button
-            onClick={() => addLike(_id)}
-            type='button'
-            className='btn btn-light'
-          >
-            <i className='fas fa-thumbs-up' />{' '}
-            <span>{likes.length > 0 && <span>{likes.length}</span>}</span>
-          </button>
-          <button
-            onClick={() => removeLike(_id)}
-            type='button'
-            className='btn btn-light'
-          >
-            <i className='fas fa-thumbs-down' />
-          </button>
-          <Link to={`/posts/${_id}`} className='btn btn-primary'>
-            Discussion{' '}
-            {comments.length > 0 && (
-              <span className='comment-count'>{comments.length}</span>
+          <div className='buttons'>
+            <div className='border-right'>
+              <div onClick={() => addLike(_id)} className='like'>
+                Like
+              </div>
+            </div>
+            <div className='border-right'>
+              <div onClick={() => removeLike(_id)} className='unlike'>
+                Unlike
+              </div>
+            </div>
+            <div>
+              <Link to={`/posts/${_id}`} className='comment comment-button'>
+                Comment
+              </Link>
+            </div>
+
+            <div>
+              <div className='clear'></div>
+            </div>
+
+            {!auth.loading && user === auth.user._id && (
+              <button onClick={() => deletePost(_id)} type='button'>
+                <i className='fas fa-times' />
+              </button>
             )}
-          </Link>
-          {!auth.loading && user === auth.user._id && (
-            <button
-              onClick={() => deletePost(_id)}
-              type='button'
-              className='btn btn-danger'
-            >
-              <i className='fas fa-times' />
-            </button>
-          )}
+          </div>
         </Fragment>
       )}
     </div>
